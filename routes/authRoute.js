@@ -12,6 +12,6 @@ router.post('/signup',registerController);
 router.post('/login',loginController);
 
 // test routes
-router.get('/test',requireSignIn,isAdmin,testController);
+router.get('/test',testController);
 
 export default router;
