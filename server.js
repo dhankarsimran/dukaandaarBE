@@ -4,7 +4,7 @@ import express from 'express';
 import morgan from 'morgan';
 import connectDb from './config/db.js';
 import authRoute from './routes/authRoute.js';
-
+import categoryRoute from './routes/categoryRoutes.js';
 dotenv.config();
 connectDb();
 
@@ -18,6 +18,7 @@ const PORT = process.env.PORT;
 
 // routes
 app.use('/api/v1/auth', authRoute);
+app.use('/api/v1/category', categoryRoute);
 
 app.get("/", (req, res) => {
     res.send("API is running...");
