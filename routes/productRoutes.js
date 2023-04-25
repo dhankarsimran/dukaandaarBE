@@ -7,6 +7,11 @@ import {
   getPhotoController,
   deleteProductController,
   updateProductController,
+  productFiltersController,
+  productCountController,
+  productListController,
+  searchProductController,
+  realtedProductController,
 } from "../controllers/productController.js";
 import formidable from "express-formidable";
 const router = express.Router();
@@ -41,6 +46,16 @@ router.put(
   formidable(),
   updateProductController
 );
+//filter product
+router.post("/product-filters", productFiltersController);
 
 // router.delete('/delete-category/:id',requireSignIn,isAdmin,deleteCategoryController);
 export default router;
+//product count
+router.get("/product-count", productCountController);
+//product per page
+router.get("/product-list/:page", productListController);
+//search product
+router.get("/search/:keyword", searchProductController);
+//similar product
+router.get("/related-product/:pid/:cid", realtedProductController);
