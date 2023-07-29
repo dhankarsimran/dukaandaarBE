@@ -33,4 +33,4 @@ const productSchema = new mongoose.Schema({
         type: Boolean,
     },
 },{timestamps:true});
-export default mongoose.model('Product', productSchema);
+export default mongoose.model('Products', productSchema);
